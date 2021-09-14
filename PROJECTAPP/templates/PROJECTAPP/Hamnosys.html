@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PakParse</title>
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'media/iconLOGO.png' %}" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/cssfile.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome.min.css' %}" />
+
+		<script>
+		function update(i)
+		{
+		var elem = document.getElementById('Hamnosystext');
+		var old  = elem.value;
+		elem.value += i;
+		}
+
+	</script>
+	</head>
+    <body>
+
+    	<!-- Header -->
+			<header id="header" style="background-color:000;" >
+				<a href="{% url 'home-page' %}"><img style="width: 70px; height: 70px;margin-top:0.5%;" class="logo" src="{% static 'media/logo.png' %}" alt="" ></a>
+				<h1 style="margin-left:65px; position:reletive;margin-top:8px;"><strong>Pak</strong>Parse</h1>
+				<input type="text" id="Hamnosystext"  style="font-family:Hamnosysunicode;font-size:40px;margin-left:30%;">
+				<nav id="nav">
+					<ul>
+						<li><a href="{% url 'home-page' %}">Home</a></li>
+						<li><a href="{% url 'demo-page' %}">Demo</a></li>
+						<li><a href="{% url 'contact' %}">Contact Us</a></li>
+					</ul>
+				</nav>
+			</header>
+
+
+    <br><br>
+    <h4 style="background-color:gray;text-align:left;color:white;font-size:20px; height:40px;text-align:center;"> (1) Handshapes</h4>
+    <table style="border:2px solid gray;width:auto;">
+	<tr>
+      <th><img onclick="update('')" src="{% static 'media/hamnosys/D.gif' %}" style="padding:5px; cursor:pointer;"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/E.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/F.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/G.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/H.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/I.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/M.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/N.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/O.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/P.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/Q.gif' %}" style="padding:5px; cursor:pointer"></th>
+	  <th><img onclick="update('')" src="{% static 'media/hamnosys/R.gif' %}" style="padding:5px; cursor:pointer"></th>
+	</tr>
+	</table>
+
+
+    <h4> (1.1) Select Thumb Position:</h4>
+    <table style="border:2px solid gray; width:auto;">
+	<tr>
+      <th><img onclick="update('')" src="{% static 'media/hamnosys/DJ.gif' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/DK.gif' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/DL.gif' %}" style="padding:5px; cursor:pointer;"></th>
+	</tr>
+	</table>
+
+	    <h4> (1.2) Select Hand Bending:</h4>
+    <table style="border:2px solid gray;width:auto;">
+	<tr>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/MB.gif' %}" style="padding:5px; cursor:pointer;"></th>
+     	 <th><img onclick="update('')" src="{% static 'media/hamnosys/EA.gif' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/EB.gif' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/EC.gif' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/IJ5C.gif' %}" style="padding:5px; cursor:pointer;"></th>
+	</tr>
+	</table>
+
+
+	  <h4> (1.3) Select Specific Finger:</h4>
+    <table style="border:2px solid grey;width:auto;">
+	<tr>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/thumb.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/index.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/middle.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/ring.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/little.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/between.png' %}" style="padding:5px; cursor:pointer;"></th></tr>
+	<tr><th><img onclick="update('')" src="{% static 'media/hamnosys/fingertip.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/fingernail.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/fingerpad.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/fingermiddle.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/fingerbase.png' %}" style="padding:5px; cursor:pointer;"></th>
+		<th><img onclick="update('')" src="{% static 'media/hamnosys/fingerside.png' %}" style="padding:5px; cursor:pointer;"></th>
+	</tr>
+	</table>
+
+	<br>
+<h4 style="background-color:gray;text-align:left;color:white;font-size:20px; height:40px;text-align:center;"> (2) Orientation</h4>
+<table style="border:2px solid grey;width:auto;">
+	<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/x-axis.png' %}" style="padding:5px; cursor:pointer;width:70px;height:60px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/up.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/y-axis.png' %}" style="padding:5px; cursor:pointer;width:70px;height:60px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/up.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	</tr>
+
+
+	<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/upleft.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/upright.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/upleft.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/upright.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	</tr>
+
+	<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/left.png' %}" style="padding:5px; cursor:pointer;width:70px;height:60px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/backview.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/right.png' %}" style="padding:5px; cursor:pointer;width:70px;height:60px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/topview.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	</tr>
+
+<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/downleft.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/downright.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/downleft.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/downright.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+</tr>
+
+
+<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/down.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/down.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+</tr>
+</table>
+
+
+<table style="border:2px solid grey;width:auto;">
+	<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/z-axis.png' %}" style="padding:5px; cursor:pointer;width:70px;height:60px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/upleft.png' %}" style="padding:5px; cursor:pointer;width:70px;height:60px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/upright.png' %}" style="padding:5px; cursor:pointer;width:70px;height:60px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmorientation.png' %}" style="padding:5px; cursor:pointer;width:70px;height:60px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmup.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	</tr>
+
+
+	<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmupleft.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmupright.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	</tr>
+
+	<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/rightview.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmleft.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palm.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmright.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	</tr>
+
+
+	<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmdownleft.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmdownright.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/white.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	</tr>
+
+
+	<tr>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/downleft.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/downright.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/palmdown.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	<th><img onclick="update('')" src="{% static 'media/hamnosys/gray.png' %}" style="padding:5px; cursor:pointer;width:60px;height:70px;"></th>
+	</tr>
+</table>
+
+	</body>
+</html>

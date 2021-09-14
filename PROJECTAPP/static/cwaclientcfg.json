@@ -1,0 +1,12 @@
+{
+  "description"     : "========  CWASA client configuration data. No Animgen server ========",
+  "animgenServer": null,
+  "avSettings" : [
+    {
+      "width":            384,
+      "height":           320,
+      "avList":           "avsfull",
+      "initAv":           "marc"
+    }
+  ]
+}

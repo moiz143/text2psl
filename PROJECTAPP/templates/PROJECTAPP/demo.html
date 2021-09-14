@@ -1,0 +1,539 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>PakParse</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'media/iconLOGO.png' %}" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
+
+  <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/cssfile.css' %}" />
+  <!--    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome.min.css' %}" />-->
+  <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Scripts -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/skel.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/util.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+  <script type="text/javascript" src="{% static 'js/allcsa.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+  <style>
+    .avTable {
+      height: 500px;
+    }
+
+    .avTable td:first-child {
+      display: none;
+    }
+
+    .divAv {
+      box-sizing: border-box;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .canvasAv {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      border: 0px;
+      padding: 0px;
+    }
+  </style>
+
+  <style>
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout  */
+
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        padding: 0px;
+      }
+
+    }
+
+    .clearplaybuttons hover {
+      background-color: yellow;
+    }
+  </style>
+
+  <script>
+    var TUavatarLoaded = false;
+  </script>
+
+</head>
+
+<body style="overflow-x:hidden;" onload="CWASA.init();">
+
+  <script>
+
+    $(document).ready(function () {
+      $("#Eng2PSLButton").click(function () {
+        $("#Eng2PSLDiv").slideToggle("slow");
+        $("#Urdu2PSLDiv").slideUp("slow");
+
+      });
+    });
+
+    $(document).ready(function () {
+      $("#Urdu2PSLButton").click(function () {
+        $("#Urdu2PSLDiv").slideToggle("slow");
+        $("#Eng2PSLDiv").slideUp("slow");
+
+      });
+    });
+
+    function goToTop() {
+      $("html, body").animate({
+        scrollTop: 0
+      }, "slow");
+      return false;
+    }
+
+  </script>
+  <!-- Header -->
+  <header id="header" style="background-color:000;">
+    <a href="{% url 'home-page' %}"><img style="width: 70px; height: 70px;margin-top:0.5%;" class="logo"
+        src="{% static 'media/logo.png' %}" alt=""></a>
+    <h1 style="margin-left:65px; position:relative;margin-top:8px;"><strong>Pak</strong>Parse</h1>
+<!--    <nav id="nav">-->
+<!--      <ul>-->
+<!--        <li><a href="{% url 'home-page' %}">Home</a></li>-->
+<!--        <li><a href="{% url 'demo-page' %}">Demo</a></li>-->
+<!--        <li><a href="{% url 'contact' %}">Contact Us</a></li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+      <nav class="navbar navbar-expand-lg">
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
+                About
+              </a>
+              <div class="dropdown-menu" >
+                  <a class="dropdown-item"  href="{% url 'about' %}">Project</a>
+                  <a class="dropdown-item"  href="{% url 'about_team' %}">Team</a>
+                  <a class="dropdown-item"  href="{% url 'about_credits' %}">Credits</a>
+              </div>
+            </li>
+
+
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home-page' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'demo-page' %}">Translator</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+  </header>
+
+
+  <!-- Main -->
+
+  <div id="loading-container" class="container">
+    <div class="row">
+      <div class="col">
+        <div class="text-center">
+          <span>Loading ...</span><br>
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+  <div id="main-container" class="container" style="display:none;">
+    <div class="row">
+      <div class="column">
+        <div class="CWASAPanel av0" align="center"></div>
+      </div>
+
+      <style>
+        .icon-user {
+          position: absolute;
+
+
+          width: 25px;
+          height: 25px;
+          left: 10px;
+          bottom: 2px;
+        }
+
+        .form-group {
+          position: relative;
+
+        }
+      </style>
+      <div class="column" style="padding-right:50px;padding-left:50px;padding-top:35px;">
+
+        <button id="Eng2PSLButton" class="TabMenuButton" style=" background-color: mediumseagreen;">English to
+          PSL</button>
+        <div id="Eng2PSLDiv" style="display:none;width: 100%; height:250px;border: 0px solid gray;">
+          <form method="POST" action="" id='eng-form'>
+            {% csrf_token %}
+            <div class="form-group">
+              <textarea autofocus name="text" id="Eng2PSL" rows="3" cols="50" maxlength="140"
+                placeholder="Enter text in English upto 140 characters."
+                style="resize:none;font-family: 'Raleway', Arial, Helvetica, sans-serif;"></textarea>
+              <span id="listenMic" class="icon-user fas fa-microphone" onclick=""></span>
+            </div>
+            <input type="submit" name="ENGPlayButton" class="clearplaybuttons" value="Play Sign" id="playbuttonENG"
+              onclick="goToTop()"
+              style=" font-size:12px; margin-top:10px;width:100%; border: 0;cursor: pointer; display: inline-block;height: 35px;line-height: 1.25em;padding: 5px 2.2em;text-align: center;text-decoration: none;text-transform: uppercase;white-space: nowrap;">
+          </form>
+          <button onclick="document.getElementById('Eng2PSL').value = '';" class="clearplaybuttons" id="clearbuttonENG"
+            value="Clear"
+            style=" font-size:12px; width:100%; border: 0;cursor: pointer; display: inline-block;height: 35px;line-height: 1.25em;padding: 5px 2.2em;text-align: center;text-decoration: none;text-transform: uppercase;white-space: nowrap;">Clear
+            Text</button>
+        </div>
+
+        <button id="Urdu2PSLButton" class="TabMenuButton" style=" background-color: mediumseagreen;">Urdu to
+          PSL</button>
+        <div id="Urdu2PSLDiv" style="display:none;width: 100%; height:250px;border: 0px solid gray;">
+          <form method="POST" action="" id='urdu-form'> {% csrf_token %}
+            <div class="form-group">
+              <textarea autofocus id="Urdu2PSL" rows="3" cols="50" maxlength="140"
+                placeholder="اردو میں 140 حرف تک لفظ درج کریں"
+                style="text-align:right;resize:none;font-family: 'Raleway', Arial, Helvetica, sans-serif;"></textarea>
+              <span id="listenUrduMic" class="icon-user fas fa-microphone" onclick=""></span>
+            </div>
+            <input type="submit" name="URDUPlayButton" class="clearplaybuttons" value="Play Sign" id="playbuttonURDU"
+              onclick="goToTop()"
+              style=" font-size:12px; margin-top:10px;width:100%; border: 0;cursor: pointer; display: inline-block;height: 35px;line-height: 1.25em;padding: 5px 2.2em;text-align: center;text-decoration: none;text-transform: uppercase;white-space: nowrap;">
+          </form>
+          <button onclick="document.getElementById('Urdu2PSL').value = '';" class="clearplaybuttons"
+            id="clearbuttonURDU"
+            style=" font-size:12px; width:100%; border: 0;cursor: pointer; display: inline-block;height: 35px;line-height: 1.25em;padding: 5px 2.2em;text-align: center;text-decoration: none;text-transform: uppercase;white-space: nowrap;">Clear
+            Text</button>
+        </div>
+
+
+        <div class="column" style="width: 50%;height:60px;">
+          <label style="text-align: center">Select Avatar</label>
+          <select id="select_avatar" style="margin-top:-15px;">
+            <option value="anna">Anna</option>
+            <option value="beatrice">Beatrice</option>
+            <option value="candy">Candy</option>
+            <option value="darshan">Darshan</option>
+            <option value="francoise">Francoise</option>
+            <option value="genie">Genie</option>
+            <option value="luna">Luna</option>
+            <option value="marc" selected="selected">Marc</option>
+            <option value="max">Max</option>
+            <option value="monkey">Monkey</option>
+            <option value="otis">Otis</option>
+            <option value="robotboy">Robotboy</option>
+            <option value="siggi">Siggi</option>
+          </select>
+        </div>
+
+        <div class="column" style="width:50%;height:60px;">
+          <label style="text-align: center;">Adjust Speed</label>
+          <input type="text" value="+0.0" id="speed_value" style="margin-top:-15px;">
+          <button id="speed_inc"
+            style="margin-top:2%;background-color:darkgray; font-size:20px;width:30px; border: 0;cursor: pointer; display: inline-block;height: 30px;line-height: 0.25em;padding: 0px 0.2em;text-align: center;text-decoration: none;text-transform: uppercase;white-space: nowrap;">+</button>
+          <button id="speed_dec"
+            style="background-color:darkgray; font-size:20px;width:30px; border: 0;cursor: pointer; display: inline-block;height: 30px;line-height: 0.25em;padding: 0px 0.2em;text-align: center;text-decoration: none;text-transform: uppercase;white-space: nowrap;">-</button>
+          <button id="speed_reset"
+            style="background-color:darkgray; font-size:20px;width:30px; border: 0;cursor: pointer; display: inline-block;height: 30px;line-height: 0.25em;padding: 0px 0.2em;text-align: center;text-decoration: none;text-transform: uppercase;white-space: nowrap;">↺</button>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    $(document).ready(function () {
+      console.log('document is ready for action');
+
+      function playAnimation(xml_text) {
+        $(".txtaSiGMLText").eq(0).html(xml_text);
+        $(".bttnPlaySiGMLText").click();
+      }
+
+      var loadingTout = setInterval(function () {
+
+        if (TUavatarLoaded) {
+          clearInterval(loadingTout);
+          console.warn("MSG: Avatar loaded successfully !");
+
+          setTimeout(function () {
+            $("#loading-container").hide();
+            $("#main-container").show();
+
+            /*
+              As the avatar is shown a hello test is started
+              in order to load all the avatar playing dependencies
+            */
+            console.warn("MSG: Starting hello test.");
+            var xml_text = '<sigml><hns_sign gloss="hello"><hamnosys_nonmanual><hnm_mouthpicture picture="hVlU"/></hamnosys_nonmanual><hamnosys_manual><hamflathand/><hamthumboutmod/><hambetween/><hamfinger2345/><hamextfingeru/><hampalmd/><hamshouldertop/><hamlrat/><hamarmextended/><hamswinging/><hamrepeatfromstart/></hamnosys_manual></hns_sign></sigml>';
+            playAnimation(xml_text);
+            console.log("MSG: Ending hello test");
+
+          }, 2000);
+        }
+      }, 2000);
+
+      $('#select_avatar').on('change', function () {
+        $('.menuAv').val(this.value);
+        $(".menuAv").trigger("change");
+      });
+
+      var speed = 0.0;
+      var inc_by = 0.5;
+      var dec_by = 0.5;
+
+      $('#speed_inc').on('click', function () {
+        $(".bttnSpeedUp").eq(0).click();
+        $("#speed_value").val($('.txtLogSpeed').eq(0).val());
+      });
+
+      $('#speed_dec').on('click', function () {
+        $(".bttnSpeedDown").eq(0).click();
+        $("#speed_value").val($('.txtLogSpeed').eq(0).val());
+      });
+
+      $('#speed_reset').on('click', function () {
+        $(".bttnSpeedReset").eq(0).click();
+        $("#speed_value").val($('.txtLogSpeed').eq(0).val());
+      });
+
+
+
+      $('#eng-form').on('submit', function () {
+        event.preventDefault();
+        console.log('English form submitted!');
+        console.log($('#Eng2PSL').val());
+
+        $.ajax({
+          url: "/getenglish", // the endpoint
+          type: "POST", // http method
+          data: {
+            text: $('#Eng2PSL').val(),
+            csrfmiddlewaretoken: $('#eng-form input[name=csrfmiddlewaretoken]').val(),
+            action: 'post'
+          },
+
+          // handle a successful response
+          success: function (response) {
+            console.log(response.xml); // log the returned json to the console
+            playAnimation(response.xml);
+            console.log("success"); // another sanity check
+          },
+
+          // handle a non-successful response
+          error: function (xhr, errmsg, err) {
+            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " + errmsg +
+              " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+          }
+        });
+
+      });
+
+      $('#urdu-form').on('submit', function () {
+        event.preventDefault();
+        console.log('Urdu form submitted!');
+        console.log($('#Urdu2PSL').val());
+
+        $.ajax({
+          url: "/geturdu", // the endpoint
+          type: "POST", // http method
+          data: {
+            text: $('#Urdu2PSL').val(),
+            csrfmiddlewaretoken: $('#urdu-form input[name=csrfmiddlewaretoken]').val(),
+            action: 'post'
+          },
+
+          // handle a successful response
+          success: function (response) {
+            console.log(response.xml); // log the returned json to the console
+            playAnimation(response.xml);
+            console.log("success"); // another sanity check
+          },
+
+          // handle a non-successful response
+          error: function (xhr, errmsg, err) {
+            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " + errmsg +
+              " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+          }
+        });
+
+      });
+
+    });
+
+  </script>
+
+  <script>
+
+    var speechRecognition = window.webkitSpeechRecognition
+
+    var recognition = new speechRecognition()
+
+    var textbox = $("#Eng2PSL")
+
+    var instructions = $("#instructions")
+
+    var content = ''
+
+    recognition.continuous = true
+
+    //recognition is started
+
+    recognition.onstart = function(){
+        instructions.text("Voice recognition is on...")
+    }
+
+    recognition.onspeechend = function() {
+        instructions.text("No Activity")
+    }
+
+    recognition.onerror = function(){
+        instructions.text("Try Again!")
+    }
+
+    recognition.onresult = function(event){
+    content = ''
+        var current = event.resultIndex;
+
+        var transcript = event.results[current][0].transcript
+
+        content += transcript
+
+        textbox.val(content)
+    }
+    var micOff = false;
+    $("#listenMic").click(function (event){
+        if(content.length){
+        content += ''
+        }
+        if(micOff == true)
+        {
+            micOff = false
+            $('#listenMic').css('color','black')
+            recognition.stop()
+
+        }
+        else
+        {
+            micOff = true
+            $('#listenMic').css('color','blue')
+            recognition.start()
+        }
+
+      })
+
+  </script>
+  <script>
+    var speechRecognition = window.webkitSpeechRecognition
+    var recognitionn = new speechRecognition()
+    var textBox = $("#Urdu2PSL")
+    var instructionss = $("#instructionss")
+    recognitionn.lang = "ur-PK";
+    var conTent = ''
+    recognitionn.continuous = true
+
+    //recognition is started
+
+    recognitionn.onstart = function(){
+        instructionss.text("Voice recognition is on...")
+    }
+
+    recognitionn.onspeechend = function() {
+        instructionss.text("No Activity")
+    }
+
+    recognitionn.onerror = function(){
+        instructionss.text("Try Again!")
+    }
+
+    recognitionn.onresult = function(event){
+    conTent = ''
+        var currentt = event.resultIndex;
+
+        var transcript = event.results[currentt][0].transcript
+
+        conTent += transcript
+
+        textBox.val(conTent)
+    }
+
+    var micOfff = false;
+    $("#listenUrduMic").click(function (event){
+        if(conTent.length){
+        conTent += ''
+        }
+        if(micOfff == true)
+        {
+            micOfff = false
+            $('#listenUrduMic').css('color','black')
+            recognitionn.stop()
+
+        }
+        else
+        {
+            micOfff = true
+            $('#listenUrduMic').css('color','blue')
+            recognitionn.start()
+        }
+
+      })
+
+  </script>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</html>
